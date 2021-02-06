@@ -24,16 +24,8 @@ security:
       scope: read,write
 
 spring:
-  datasource:
-    url: jdbc:oracle:thin:@//${ORACLEDB_HOST:192.168.99.100}:${ORACLEDB_PORT:1521}/${ORACLEDB_SERVICENAME:XE.localdomain}
-    username: ${ORACLEDB_USERNAME:AUTH}
-    password: ${ORACLEDB_PASSWORD:AUTH}
-    driver-class-name: oracle.jdbc.driver.OracleDriver
-  jpa:
-    show-sql: false
-    properties:
-      hibernate:
-        generate_statistics: false
-  flyway:
-    enabled: true
-    baseline-on-migrate: false
+  data:
+    mongodb:
+      host: 192.168.99.100
+      database: AUTH
+      port: 27017
