@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: standards
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        generate_statistics: false
+  flyway:
+    enabled: true
+    baseline-on-migrate: false
+  datasource:
+    url: jdbc:oracle:thin:@//${ORACLEDB_HOST:192.168.99.100}:${ORACLEDB_PORT:1521}/${ORACLEDB_SERVICENAME:XE.localdomain}
+    username: ${ORACLEDB_USERNAME:STANDARDS}
+    password: ${ORACLEDB_PASSWORD:STANDARDS}
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+
+eureka:
+  instance:
+    hostname: localhost
+    port: 9091
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+  server:
+    wait-time-in-ms-when-sync-empty: 3000
+
+authserver:
+  hostname: http://localhost:9092
+
+security:
+  oauth2:
+    resource:
+      userInfoUri: ${authserver.hostname}/user
+
+server:
+  port: 9093
