@@ -33,7 +33,7 @@ authserver:
 security:
   oauth2:
     resource:
-      userInfoUri: ${authserver.hostname}/users
+      userInfoUri: ${authserver.hostname}/users/user
 
 server:
   port: 9093
