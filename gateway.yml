@@ -15,6 +15,7 @@ eureka:
 
 zuul:
   prefix: /api
+  ignored-services: '*'
   routes:
     auth:
       path: /auth/**
