@@ -1,6 +1,8 @@
 server:
   port: 9092
-
+  servlet:
+    context-path: /uaa
+    
 eureka:
   instance:
     hostname: localhost
