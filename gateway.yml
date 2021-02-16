@@ -18,9 +18,9 @@ zuul:
   routes:
     auth:
       path: /auth/**
-      serviceId: AUTH
+      serviceId: auth
     standards:
       path: /standards/**
-      serviceId: STANDARDS
+      serviceId: standards
   host:
     socket-timeout-millis: 30000
