@@ -37,3 +37,5 @@ security:
 
 server:
   port: 9093
+  servlet:
+    context-path: /standards
