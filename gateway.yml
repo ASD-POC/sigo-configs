@@ -30,3 +30,7 @@ security:
   oauth2:
     client:
       accessTokenUri: http://localhost:9092/uaa/oauth/token
+
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
