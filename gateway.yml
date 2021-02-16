@@ -24,7 +24,7 @@ zuul:
       path: /standards/**
       serviceId: standards
   host:
-    socket-timeout-millis: 30000
+    socket-timeout-millis: 20000
 
 security:
   oauth2:
@@ -32,8 +32,8 @@ security:
       accessTokenUri: http://localhost:9092/uaa/oauth/token
 
 ribbon:
-  ReadTimeout: 60000
-  ConnectTimeout: 60000
+  ReadTimeout: 20000
+  ConnectTimeout: 20000
 
 hystrix:
   command:
@@ -41,4 +41,4 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 60000
+            timeoutInMilliseconds: 20000
