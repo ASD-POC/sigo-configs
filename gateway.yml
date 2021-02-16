@@ -18,9 +18,8 @@ zuul:
   ignored-services: '*'
   routes:
     auth:
-      path: /uaa/**
+      path: /auth/**
       serviceId: auth
-      stripPrefix: false
     standards:
       path: /standards/**
       serviceId: standards
