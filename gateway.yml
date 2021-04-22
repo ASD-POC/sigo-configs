@@ -24,6 +24,9 @@ zuul:
     standards:
       path: /standards/**
       serviceId: standards
+    consulting:
+      path: /consulting/**
+      serviceId: consulting  
   host:
     socket-timeout-millis: 20000
 
