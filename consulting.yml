@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: consulting
+  data:
+    mongodb:
+      host: localhost
+      database: CONSULTING
+      port: 27017
+  rabbitmq:
+    host: ${RABBIT_HOST:localhost}
+    port: ${RABBIT_PORT:5672}
+    username: ${RABBIT_USERNAME:guest}
+    password: ${RABBIT_PASSWORD:guest}
+    listener:
+      simple:
+        default-requeue-rejected: false
+        concurrency: 2
+        prefetch: 1
+        retry:
+          enabled: false
+          max-attempts: 3
+          initial-interval: 2000
+          multiplier: 2
+          max-interval: 10000
+  main:
+    allow-bean-definition-overriding: true
+
+eureka:
+  instance:
+    hostname: localhost
+    port: 9091
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+  server:
+    wait-time-in-ms-when-sync-empty: 3000
+
+server:
+  port: 9095
