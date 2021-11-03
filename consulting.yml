@@ -23,7 +23,7 @@ spring:
           multiplier: 2
           max-interval: 10000
   main:
-    allow-bean-definition-overriding: false
+    allow-bean-definition-overriding: true
 
 eureka:
   instance:
