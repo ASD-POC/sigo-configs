@@ -36,8 +36,8 @@ security:
       accessTokenUri: http://localhost:9092/oauth/token
 
 ribbon:
-  ReadTimeout: 20000
-  ConnectTimeout: 20000
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
 
 hystrix:
   command:
@@ -45,7 +45,7 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 80000
+            timeoutInMilliseconds: 60000
 swagger:
   config:
     refreshrate: 5000
